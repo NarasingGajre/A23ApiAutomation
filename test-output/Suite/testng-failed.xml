@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="API_TestCases.Remove_UPI">
+        <methods>
+          <include name="removeupi"/>
+        </methods>
+      </class> <!-- API_TestCases.Remove_UPI -->
+      <class name="API_TestCases.Add_Cash_Click">
+        <methods>
+          <include name="add_cash_click"/>
+        </methods>
+      </class> <!-- API_TestCases.Add_Cash_Click -->
+      <class name="API_TestCases.Get_Balance">
+        <methods>
+          <include name="getBalance"/>
+        </methods>
+      </class> <!-- API_TestCases.Get_Balance -->
+      <class name="API_TestCases.Remove_Wallet">
+        <methods>
+          <include name="removewallet"/>
+        </methods>
+      </class> <!-- API_TestCases.Remove_Wallet -->
+      <class name="API_TestCases.Add_Wallet">
+        <methods>
+          <include name="addwallet"/>
+        </methods>
+      </class> <!-- API_TestCases.Add_Wallet -->
+      <class name="API_TestCases.Add_UPI">
+        <methods>
+          <include name="addupi"/>
+        </methods>
+      </class> <!-- API_TestCases.Add_UPI -->
+      <class name="API_TestCases.Cancel_Redeem">
+        <methods>
+          <include name="cancelredeem"/>
+        </methods>
+      </class> <!-- API_TestCases.Cancel_Redeem -->
+      <class name="API_TestCases.Add_Cash_Process">
+        <methods>
+          <include name="add_cash_process"/>
+        </methods>
+      </class> <!-- API_TestCases.Add_Cash_Process -->
+      <class name="API_TestCases.Place_Redeem">
+        <methods>
+          <include name="placeredeem"/>
+        </methods>
+      </class> <!-- API_TestCases.Place_Redeem -->
+      <class name="API_TestCases.Login_With_OTP">
+        <methods>
+          <include name="generateOTP"/>
+          <include name="enterOTP"/>
+        </methods>
+      </class> <!-- API_TestCases.Login_With_OTP -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
