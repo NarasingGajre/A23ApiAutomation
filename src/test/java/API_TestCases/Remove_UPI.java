@@ -8,16 +8,18 @@ import io.restassured.RestAssured;
 
 public class Remove_UPI {
 	
-	
+	Login_With_OTP otp;
 	@Test
 	 
 	 public void removeupi() {
 		
 
 		RestAssured.baseURI ="https://api.qapfgames.com";
-		RestAssured.basePath ="/a23user";
+		RestAssured.basePath ="/redeem";
+		String token = otp.dataToken; /* System.getProperty("dataToken"); */
+		System.out.println("token..."+token);
 		
-		given().contentType("application/json;charset=UTF-8").header("Authorizations", "")
+		given().contentType("application/json;charset=UTF-8").header("Authorizations", token)
 		       .body("{\r\n"
 		       		+ "  \"upiId\": \"success@upi\",\r\n"
 		       		+ "  \"channel\": \"A23APS\"\r\n"

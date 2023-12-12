@@ -3,16 +3,17 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="API_TestCases.Add_Wallet"/>
-      <class name="API_TestCases.Cancel_Redeem"/>
-      <class name="API_TestCases.Remove_UPI"/>
-      <class name="API_TestCases.Place_Redeem"/>
-      <class name="API_TestCases.Remove_Wallet"/>
-      <class name="API_TestCases.Add_UPI"/>
-      <class name="API_TestCases.Login_With_OTP"/>
-      <class name="API_TestCases.Add_Cash_Process"/>
-      <class name="API_TestCases.Get_Balance"/>
-      <class name="API_TestCases.Add_Cash_Click"/>
+		
+	   <class name="API_TestCases.Login_With_OTP"/>
+       <class name="API_TestCases.Add_Wallet"/>
+       <class name="API_TestCases.Add_UPI"/>
+       <class name="API_TestCases.Place_Redeem"/>
+       <class name="API_TestCases.Redeem_Details"/>
+       <class name="API_TestCases.Cancel_Redeem"/>
+       <class name="API_TestCases.Redeem_Details"/>
+       <class name="API_TestCases.Remove_UPI"/>
+       <class name="API_TestCases.Remove_Wallet"/>
+       <class name="API_TestCases.Redeem_Details"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

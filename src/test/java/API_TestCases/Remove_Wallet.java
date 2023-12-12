@@ -8,15 +8,17 @@ import io.restassured.RestAssured;
 
 public class Remove_Wallet {
 	
-	
+	Login_With_OTP otp;
 	@Test
 	
 	 public void removewallet() {
 		
 		RestAssured.baseURI ="https://api.qapfgames.com";
-		RestAssured.basePath ="/a23user";
+		RestAssured.basePath ="/redeem";
+		String token = otp.dataToken; /* System.getProperty("dataToken"); */
+//		System.out.println("token..."+token);
 		
-		given().contentType("application/json;charset=UTF-8").header("Authorizations", "")
+		given().contentType("application/json;charset=UTF-8").header("Authorizations", token)
 		       .body("{\r\n"
 		       		+ "  \"walletType\": \"paytm\",\r\n"
 		       		+ "  \"channel\": \"A23APS\"\r\n"

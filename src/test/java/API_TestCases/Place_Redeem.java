@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import io.restassured.RestAssured;
 
 public class Place_Redeem {
-	
+	Login_With_OTP otp;
 	
 	@Test
 	
@@ -15,16 +15,18 @@ public class Place_Redeem {
 	{
 		
 		RestAssured.baseURI="https://api.qapfgames.com";
-		RestAssured.basePath="/a23user";
+		RestAssured.basePath="/redeem";
+		String token = otp.dataToken; /* System.getProperty("dataToken"); */
+		System.out.println("token..."+token);
 		
 		
-        given().header("ContentType", "application/json").header("Authorization", "token")
+        given().header("ContentType", "application/json").header("Authorization", token)
                .body("{\r\n"
-               		+ "  \"amount\": 1,\r\n"
+               		+ "  \"amount\":50,\r\n"
                		+ "  \"withdrawType\": \"upi\",\r\n"
                		+ "  \"channel\": \"A23APS\",\r\n"
-               		+ "  \"bankAccountNumber\": \"2222222222222222\",\r\n"
-               		+ "  \"name\": \"ISHAN\"\r\n"
+               		+ "  \"bankAccountNumber\": \"64106469251\",\r\n"
+               		+ "  \"name\": \"NARASING\"\r\n"
                		+ "}")
         .when()
               .post("/withdrawal_request\r\n")

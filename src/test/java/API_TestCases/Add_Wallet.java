@@ -9,15 +9,19 @@ import static org.hamcrest.Matchers.*;
 import org.testng.annotations.Test;
 
 public class Add_Wallet {
+	Login_With_OTP otp;
 	
 	@Test
 	public  void addwallet() {
+		otp = new Login_With_OTP();
 		
 		RestAssured.baseURI="https://api.qapfgames.com";
-		RestAssured.basePath="/a23user";
+		RestAssured.basePath="/redeem";
 		
+		String token = otp.dataToken; /* System.getProperty("dataToken"); */
+		System.out.println("token..."+token);
 		
-        given().header("ContentType", "application/json").header("Authorization", "token")
+        given().header("ContentType", "application/json").header("Authorization", token)
                .body("{\r\n"
                		+ "  \"walletType\": \"paytm\",\r\n"
                		+ "  \"otp\": \"123456\",\r\n"
