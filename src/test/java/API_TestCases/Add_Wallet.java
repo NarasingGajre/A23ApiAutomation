@@ -18,6 +18,7 @@ public class Add_Wallet {
 
 	@Test(description="This is to get token",groups= {"Sanity"},priority=1)
 	 public void generateOTP(){
+		
 		RestAssured.baseURI ="https://api.qapfgames.com";
 		RestAssured.basePath ="/a23user";
 		given().contentType("application/json;charset=UTF-8")
@@ -29,8 +30,7 @@ public class Add_Wallet {
 		       		+ "  \"screenName\": \"sage407546\",\r\n"
 		       		+ "  \"version\": \"3.0.0\"\r\n"
 		       		+ "}")
-		 .when()
-		       .post("/login_by_scrname_otp");
+		 .when().post("/login_by_scrname_otp");
 		
         Response response1 =given().contentType("application/json;charset=UTF-8")
 				.body("{\r\n"
@@ -41,7 +41,6 @@ public class Add_Wallet {
 			       		+ "  \"screenName\": \"sage407546\",\r\n"
 			       		+ "  \"version\": \"3.0.0\"\r\n"
 			       		+ "}")
-				.log().all()
 		        .when().post("/login_by_scrname_otp");
 		 
 		 dataToken = response1.path("token");
@@ -52,7 +51,7 @@ public class Add_Wallet {
 	
 
 	@Test(description="Validate that user is able to the add paytm wallet",groups="Sanity",priority=2)
-public void paytmwallet(){
+        public void paytmwallet(){
 		
 		RestAssured.baseURI ="https://api.qapfgames.com";
 		RestAssured.basePath ="/redeem";
@@ -85,40 +84,42 @@ public void paytmwallet(){
 		 response2.then().body("statusCode",equalTo( 1210));
 	}
 	
-//	@Test(dependsOnMethods= {"paytmwallet"},description="Validate that user is able to add same paytm wallet again", groups="Sanity", priority=3)
-//   public void paytmwalletsame(){
-//		
-//		RestAssured.baseURI ="https://api.qapfgames.com";
-//		RestAssured.basePath ="/redeem";
-//		
-//		 Response response1 =given().contentType("application/json;charset=UTF-8").header("Authorization", dataToken)
-//				.body("{\n"
-//			       		+ "\"walletType\": \"paytm\",\n"
-//			       		+ "\"otp\": \"\",\n"
-//			       		+ "\"channel\": \"A23APS\"\n"
-//			       		+ "}")
-//				.log().all()
-//		        .when().post("/add_wallet");
-//		 
-//		 
-//		 String m = response1.asString();
-//		 System.out.println(m);
-//		 
-//		 Response response2 =given().contentType("application/json;charset=UTF-8").header("Authorization", dataToken)
-//					.body("{\n"
-//				       		+ "\"walletType\": \"paytm\",\n"
-//				       		+ "\"otp\": \"123456\",\n"
-//				       		+ "\"channel\": \"A23APS\"\n"
-//				       		+ "}")
-//					.log().all()
-//			        .when().post("/add_wallet");
-//		 String m2 = response2.asString();
-//		 System.out.println(m2);
-//		 //Assert.assertEquals(response2.statusCode(), 200);
-//		 //Assert.assertEquals(response2.contentType(), "application/json; charset=UTF-8");
-//		response2.then().body("message", equalTo("Wallet already exist."));
-//	}
-//	
+	
+	
+	@Test(description="Validate that user is able to add same paytm wallet again", groups="Sanity", priority=3)
+ public void paytmwalletsame(){
+		
+		RestAssured.baseURI ="https://api.qapfgames.com";
+		RestAssured.basePath ="/redeem";
+		
+		 Response response1 =given().contentType("application/json;charset=UTF-8").header("Authorization", dataToken)
+				.body("{\n"
+			       		+ "\"walletType\": \"amazon\",\n"
+			       		+ "\"otp\": \"\",\n"
+			       		+ "\"channel\": \"A23APS\"\n"
+			       		+ "}")
+				.log().all()
+		        .when().post("/add_wallet");
+		 
+		 
+		 String m = response1.asString();
+		 System.out.println(m);
+		 
+		 Response response2 =given().contentType("application/json;charset=UTF-8").header("Authorization", dataToken)
+					.body("{\n"
+				       		+ "\"walletType\": \"amazon\",\n"
+				       		+ "\"otp\": \"123456\",\n"
+				       		+ "\"channel\": \"A23APS\"\n"
+				       		+ "}")
+					.log().all()
+			        .when().post("/add_wallet");
+		 String m2 = response2.asString();
+		 System.out.println(m2);
+		 //Assert.assertEquals(response2.statusCode(), 200);
+		 //Assert.assertEquals(response2.contentType(), "application/json; charset=UTF-8");
+		//response2.then().body("message", equalTo("Wallet already exist."));
+	}
+	
 
 }
 
