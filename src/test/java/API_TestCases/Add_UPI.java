@@ -5,19 +5,19 @@ import static org.hamcrest.Matchers.equalTo;
 
 import org.testng.annotations.Test;
 
+import API_Endpoints.Routes;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 public class Add_UPI {
-	Login_With_OTP otp;
+	
 	Response reqeust;
 	public static String dataToken;
 	
 	
 	@Test(description="This is to get token",groups= {"Sanity"},priority=1)
 	 public void generateOTP(){
-		RestAssured.baseURI ="https://api.qapfgames.com";
-		RestAssured.basePath ="/a23user";
+		
 		given().contentType("application/json;charset=UTF-8")
 		       .body("{\r\n"
 		       		+ "  \"channel\": \"A23APS\",\r\n"
@@ -28,7 +28,7 @@ public class Add_UPI {
 		       		+ "  \"version\": \"3.0.0\"\r\n"
 		       		+ "}")
 		 .when()
-		       .post("/login_by_scrname_otp");
+		       .post(Routes.Login_OTP);
 		 
 		       
 		
@@ -41,7 +41,7 @@ public class Add_UPI {
 			       		+ "  \"screenName\": \"sage407546\",\r\n"
 			       		+ "  \"version\": \"3.0.0\"\r\n"
 			       		+ "}")
-		        .when().post("/login_by_scrname_otp");
+		        .when().post(Routes.Login_OTP);
 		 
 		 dataToken = response1.path("token");
 	   	 System.out.println("data token.. "+dataToken);
@@ -52,8 +52,7 @@ public class Add_UPI {
 	@Test(description="Validate that user is able to add upi", groups="Sanity", priority=2)
 	
 	public void addupi() {
-	RestAssured.baseURI ="https://api.qapfgames.com";
-	RestAssured.basePath ="/a23user";
+	
 	Response response1 =given().contentType("application/json; charset=UTF-8").header("Authorization", dataToken)
 			.body("{\n"
 					+ "  \"upi\": \"success@upi\",\n"
@@ -63,7 +62,7 @@ public class Add_UPI {
 					+ "  \"submit\": true,\n"
 					+ "  \"otp\": \"\"\n"
 					+ "}")
-            .when().post("/add_upi");
+            .when().post(Routes.add_upi);
 	 String m = response1.asString();
 	 System.out.println(m);
 	 //response1.then().body("message", equalTo("Wallet removed."));
@@ -77,7 +76,7 @@ public class Add_UPI {
 						+ "  \"submit\": true,\n"
 						+ "  \"otp\": \"123456\"\n"
 						+ "}")
-	            .when().post("/add_upi");
+	            .when().post(Routes.add_upi);
 	 String m1 = response2.asString();
 	 System.out.println(m1);
 	 
@@ -91,13 +90,12 @@ public class Add_UPI {
 						+ "  \"otp\": \"123456\"\n"
 						+ "}")
 				.log().all()
-	            .when().post("/add_upi");
+	            .when().post(Routes.add_upi);
 	 String m2 = response3.asString();
 	 System.out.println(m2);
 	 
 	 
 	 
 	}
-	
-
+		  
 }

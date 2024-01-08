@@ -1,208 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="16" passed="14" failed="2" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-09T00:32:33 IST" name="Suite" finished-at="2024-01-09T00:33:01 IST" duration-ms="27697">
+  <suite started-at="2024-01-09T01:31:15 IST" name="Default suite" finished-at="2024-01-09T01:31:30 IST" duration-ms="14713">
     <groups>
       <group name="Sanity">
-        <method signature="Add_UPI.generateOTP()[pri:1, instance:API_TestCases.Add_UPI@53ce1329]" name="generateOTP" class="API_TestCases.Add_UPI"/>
-        <method signature="Place_Redeem.generateOTP()[pri:1, instance:API_TestCases.Place_Redeem@ffaa6af]" name="generateOTP" class="API_TestCases.Place_Redeem"/>
-        <method signature="Redeem_Details.generateOTP()[pri:1, instance:API_TestCases.Redeem_Details@316bcf94]" name="generateOTP" class="API_TestCases.Redeem_Details"/>
-        <method signature="Add_UPI.addupi()[pri:2, instance:API_TestCases.Add_UPI@53ce1329]" name="addupi" class="API_TestCases.Add_UPI"/>
-        <method signature="Add_Wallet.generateOTP()[pri:1, instance:API_TestCases.Add_Wallet@4fb3ee4e]" name="generateOTP" class="API_TestCases.Add_Wallet"/>
-        <method signature="Remove_Wallet.generateOTP()[pri:1, instance:API_TestCases.Remove_Wallet@17497425]" name="generateOTP" class="API_TestCases.Remove_Wallet"/>
-        <method signature="Add_Wallet.paytmwallet()[pri:2, instance:API_TestCases.Add_Wallet@4fb3ee4e]" name="paytmwallet" class="API_TestCases.Add_Wallet"/>
-        <method signature="Remove_Wallet.removewallet()[pri:2, instance:API_TestCases.Remove_Wallet@17497425]" name="removewallet" class="API_TestCases.Remove_Wallet"/>
-        <method signature="Add_Wallet.paytmwalletsame()[pri:3, instance:API_TestCases.Add_Wallet@4fb3ee4e]" name="paytmwalletsame" class="API_TestCases.Add_Wallet"/>
+        <method signature="Login_With_Password.generateOTP()[pri:1, instance:API_TestCases.Login_With_Password@543588e6]" name="generateOTP" class="API_TestCases.Login_With_Password"/>
+        <method signature="Login_With_Password.LoginbyPassword()[pri:3, instance:API_TestCases.Login_With_Password@543588e6]" name="LoginbyPassword" class="API_TestCases.Login_With_Password"/>
       </group> <!-- Sanity -->
     </groups>
-    <test started-at="2024-01-09T00:32:33 IST" name="Test" finished-at="2024-01-09T00:33:01 IST" duration-ms="27697">
-      <class name="API_TestCases.Add_Wallet">
-        <test-method signature="generateOTP()[pri:1, instance:API_TestCases.Add_Wallet@4fb3ee4e]" started-at="2024-01-09T00:32:33 IST" name="generateOTP" description="This is to get token" finished-at="2024-01-09T00:32:40 IST" duration-ms="6753" status="PASS">
+    <test started-at="2024-01-09T01:31:15 IST" name="Default test" finished-at="2024-01-09T01:31:30 IST" duration-ms="14713">
+      <class name="API_TestCases.Login_With_Password">
+        <test-method signature="generateOTP()[pri:1, instance:API_TestCases.Login_With_Password@543588e6]" started-at="2024-01-09T01:31:16 IST" name="generateOTP" description="This is to get token" finished-at="2024-01-09T01:31:23 IST" duration-ms="7472" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateOTP -->
-        <test-method signature="paytmwallet()[pri:2, instance:API_TestCases.Add_Wallet@4fb3ee4e]" started-at="2024-01-09T00:32:40 IST" name="paytmwallet" description="Validate that user is able to the add paytm wallet" finished-at="2024-01-09T00:32:44 IST" duration-ms="4282" status="PASS">
+        <test-method signature="SetPassword()[pri:2, instance:API_TestCases.Login_With_Password@543588e6]" started-at="2024-01-09T01:31:23 IST" name="SetPassword" finished-at="2024-01-09T01:31:26 IST" duration-ms="3150" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- paytmwallet -->
-        <test-method signature="paytmwalletsame()[pri:3, instance:API_TestCases.Add_Wallet@4fb3ee4e]" started-at="2024-01-09T00:32:44 IST" name="paytmwalletsame" description="Validate that user is able to add same paytm wallet again" finished-at="2024-01-09T00:32:44 IST" duration-ms="243" status="PASS">
+        </test-method> <!-- SetPassword -->
+        <test-method signature="LoginbyPassword()[pri:3, instance:API_TestCases.Login_With_Password@543588e6]" started-at="2024-01-09T01:31:26 IST" name="LoginbyPassword" description="Validate that user is able to login with password" finished-at="2024-01-09T01:31:30 IST" duration-ms="4027" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- paytmwalletsame -->
-      </class> <!-- API_TestCases.Add_Wallet -->
-      <class name="API_TestCases.Login_With_OTP">
-        <test-method signature="generateOTP()[pri:1, instance:API_TestCases.Login_With_OTP@6404f418]" started-at="2024-01-09T00:33:00 IST" name="generateOTP" finished-at="2024-01-09T00:33:00 IST" duration-ms="173" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateOTP -->
-        <test-method signature="enterOTP()[pri:2, instance:API_TestCases.Login_With_OTP@6404f418]" started-at="2024-01-09T00:33:00 IST" name="enterOTP" finished-at="2024-01-09T00:33:01 IST" duration-ms="601" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- enterOTP -->
-      </class> <!-- API_TestCases.Login_With_OTP -->
-      <class name="API_TestCases.Redeem_Details">
-        <test-method signature="generateOTP()[pri:1, instance:API_TestCases.Redeem_Details@316bcf94]" started-at="2024-01-09T00:32:56 IST" name="generateOTP" description="This is to get token" finished-at="2024-01-09T00:32:57 IST" duration-ms="612" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateOTP -->
-        <test-method signature="redeemdetails()[pri:2, instance:API_TestCases.Redeem_Details@316bcf94]" started-at="2024-01-09T00:32:57 IST" name="redeemdetails" finished-at="2024-01-09T00:33:00 IST" duration-ms="3234" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- redeemdetails -->
-      </class> <!-- API_TestCases.Redeem_Details -->
-      <class name="API_TestCases.Add_UPI">
-        <test-method signature="generateOTP()[pri:1, instance:API_TestCases.Add_UPI@53ce1329]" started-at="2024-01-09T00:32:55 IST" name="generateOTP" description="This is to get token" finished-at="2024-01-09T00:32:56 IST" duration-ms="487" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateOTP -->
-        <test-method signature="addupi()[pri:2, instance:API_TestCases.Add_UPI@53ce1329]" started-at="2024-01-09T00:32:56 IST" name="addupi" description="Validate that user is able to add upi" finished-at="2024-01-09T00:32:56 IST" duration-ms="288" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addupi -->
-      </class> <!-- API_TestCases.Add_UPI -->
-      <class name="API_TestCases.Place_Redeem">
-        <test-method signature="generateOTP()[pri:1, instance:API_TestCases.Place_Redeem@ffaa6af]" started-at="2024-01-09T00:32:49 IST" name="generateOTP" description="This is to get token" finished-at="2024-01-09T00:32:49 IST" duration-ms="488" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateOTP -->
-        <test-method signature="placeredeem()[pri:2, instance:API_TestCases.Place_Redeem@ffaa6af]" started-at="2024-01-09T00:32:49 IST" name="placeredeem" description="Validate that user is displayed with Email verify to place redeem" finished-at="2024-01-09T00:32:52 IST" duration-ms="3172" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- placeredeem -->
-        <test-method signature="emialverification()[pri:0, instance:API_TestCases.Place_Redeem@ffaa6af]" started-at="2024-01-09T00:32:52 IST" name="emialverification" finished-at="2024-01-09T00:32:55 IST" depends-on-methods="API_TestCases.Place_Redeem.placeredeem" duration-ms="2824" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- emialverification -->
-      </class> <!-- API_TestCases.Place_Redeem -->
-      <class name="API_TestCases.Remove_Wallet">
-        <test-method signature="generateOTP()[pri:1, instance:API_TestCases.Remove_Wallet@17497425]" started-at="2024-01-09T00:32:44 IST" name="generateOTP" description="This is to get token" finished-at="2024-01-09T00:32:45 IST" duration-ms="517" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateOTP -->
-        <test-method signature="removewallet()[pri:2, instance:API_TestCases.Remove_Wallet@17497425]" started-at="2024-01-09T00:32:45 IST" name="removewallet" description="Validate that user is able to remove paytm wallet" finished-at="2024-01-09T00:32:49 IST" duration-ms="3941" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- removewallet -->
-      </class> <!-- API_TestCases.Remove_Wallet -->
-      <class name="API_TestCases.Remove_UPI">
-        <test-method signature="removeupi()[pri:0, instance:API_TestCases.Remove_UPI@194bcebf]" started-at="2024-01-09T00:32:44 IST" name="removeupi" finished-at="2024-01-09T00:32:44 IST" duration-ms="1" status="FAIL">
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Header value cannot be null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Header value cannot be null
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
-at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
-at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
-at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
-at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
-at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:869)
-at API_TestCases.Remove_UPI.removeupi(Remove_UPI.java:22)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- removeupi -->
-      </class> <!-- API_TestCases.Remove_UPI -->
-      <class name="API_TestCases.Cancel_Redeem">
-        <test-method signature="cancelredeem()[pri:0, instance:API_TestCases.Cancel_Redeem@3c7f66c4]" started-at="2024-01-09T00:32:44 IST" name="cancelredeem" finished-at="2024-01-09T00:32:44 IST" duration-ms="2" status="FAIL">
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Header value cannot be null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Header value cannot be null
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
-at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
-at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
-at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
-at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
-at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
-at io.restassured.internal.RequestSpecificationImpl.header(RequestSpecificationImpl.groovy:869)
-at API_TestCases.Cancel_Redeem.cancelredeem(Cancel_Redeem.java:20)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cancelredeem -->
-      </class> <!-- API_TestCases.Cancel_Redeem -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- LoginbyPassword -->
+      </class> <!-- API_TestCases.Login_With_Password -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

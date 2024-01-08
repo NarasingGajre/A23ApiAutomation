@@ -9,6 +9,8 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import org.testng.annotations.Test;
 
+import API_Endpoints.Routes;
+
 public class Login_With_OTP {
 	
 	Response reqeust;
@@ -18,8 +20,7 @@ public class Login_With_OTP {
 
 	@Test(priority=1)
 	 public void generateOTP() {
-	RestAssured.baseURI ="https://api.qapfgames.com";
-	RestAssured.basePath ="/a23user";
+	
 	given().contentType("application/json;charset=UTF-8")
 	       .body("{\r\n"
 	       		+ "  \"channel\": \"A23APS\",\r\n"
@@ -30,7 +31,7 @@ public class Login_With_OTP {
 	       		+ "  \"version\": \"3.0.0\"\r\n"
 	       		+ "}")
 	 .when()
-	       .post("/login_by_scrname_otp")
+	       .post(Routes.Login_OTP)
 	 .then()
 	       .log().all()
 	       .assertThat().statusCode(200);
@@ -42,8 +43,7 @@ public class Login_With_OTP {
 	@Test(priority=2)
 	public void enterOTP(){
 		
-		RestAssured.baseURI ="https://api.qapfgames.com";
-		RestAssured.basePath ="/a23user";
+		
 		
 		 Response response1 =given().contentType("application/json;charset=UTF-8")
 				.body("{\r\n"
@@ -54,11 +54,11 @@ public class Login_With_OTP {
 			       		+ "  \"screenName\": \"sage407546\",\r\n"
 			       		+ "  \"version\": \"3.0.0\"\r\n"
 			       		+ "}").log().all()
-		.when().post("/login_by_scrname_otp");
+		.when().post(Routes.Login_OTP);
 	
 		       
 		 dataToken = response1.path("token");
-	 System.out.println("data token.. "+dataToken);
+	     System.out.println("data token.. "+dataToken);
 		 System.setProperty(dataToken, dataToken);
 
 }

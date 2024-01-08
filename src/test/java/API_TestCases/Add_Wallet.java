@@ -4,6 +4,8 @@ import static io.restassured.RestAssured.given;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import API_Endpoints.Routes;
 import io.restassured.RestAssured;
 import static org.hamcrest.Matchers.equalTo;
 import io.restassured.response.Response;
@@ -19,8 +21,7 @@ public class Add_Wallet {
 	@Test(description="This is to get token",groups= {"Sanity"},priority=1)
 	 public void generateOTP(){
 		
-		RestAssured.baseURI ="https://api.qapfgames.com";
-		RestAssured.basePath ="/a23user";
+		
 		given().contentType("application/json;charset=UTF-8")
 		       .body("{\r\n"
 		       		+ "  \"channel\": \"A23APS\",\r\n"
@@ -30,7 +31,7 @@ public class Add_Wallet {
 		       		+ "  \"screenName\": \"sage407546\",\r\n"
 		       		+ "  \"version\": \"3.0.0\"\r\n"
 		       		+ "}")
-		 .when().post("/login_by_scrname_otp");
+		 .when().post(Routes.Login_OTP);
 		
         Response response1 =given().contentType("application/json;charset=UTF-8")
 				.body("{\r\n"
@@ -41,7 +42,7 @@ public class Add_Wallet {
 			       		+ "  \"screenName\": \"sage407546\",\r\n"
 			       		+ "  \"version\": \"3.0.0\"\r\n"
 			       		+ "}")
-		        .when().post("/login_by_scrname_otp");
+		        .when().post(Routes.Login_OTP);
 		 
 		 dataToken = response1.path("token");
 	   	 System.out.println("data token.. "+dataToken);
@@ -53,8 +54,7 @@ public class Add_Wallet {
 	@Test(description="Validate that user is able to the add paytm wallet",groups="Sanity",priority=2)
         public void paytmwallet(){
 		
-		RestAssured.baseURI ="https://api.qapfgames.com";
-		RestAssured.basePath ="/redeem";
+		
 		
 		 Response response1 =given().contentType("application/json; charset=UTF-8").header("Authorization", dataToken)
 				.body("{\n"
@@ -63,7 +63,7 @@ public class Add_Wallet {
 			       		+ "\"channel\": \"A23APS\"\n"
 			       		+ "}")
 				.log().all()
-		        .when().post("/add_wallet");
+		        .when().post(Routes.add_wallet);
 		 
 		 
 		 String m = response1.asString();
@@ -76,7 +76,7 @@ public class Add_Wallet {
 				       		+ "\"channel\": \"A23APS\"\n"
 				       		+ "}")
 					.log().all()
-			        .when().post("/add_wallet");
+			        .when().post(Routes.add_wallet);
 		 String m2 = response2.asString();
 		 System.out.println(m2);
 		 Assert.assertEquals(response2.statusCode(), 200);
@@ -89,8 +89,7 @@ public class Add_Wallet {
 	@Test(description="Validate that user is able to add same paytm wallet again", groups="Sanity", priority=3)
  public void paytmwalletsame(){
 		
-		RestAssured.baseURI ="https://api.qapfgames.com";
-		RestAssured.basePath ="/redeem";
+		
 		
 		 Response response1 =given().contentType("application/json;charset=UTF-8").header("Authorization", dataToken)
 				.body("{\n"
@@ -99,7 +98,7 @@ public class Add_Wallet {
 			       		+ "\"channel\": \"A23APS\"\n"
 			       		+ "}")
 				.log().all()
-		        .when().post("/add_wallet");
+		        .when().post(Routes.add_wallet);
 		 
 		 
 		 String m = response1.asString();
@@ -112,7 +111,7 @@ public class Add_Wallet {
 				       		+ "\"channel\": \"A23APS\"\n"
 				       		+ "}")
 					.log().all()
-			        .when().post("/add_wallet");
+			        .when().post(Routes.add_wallet);
 		 String m2 = response2.asString();
 		 System.out.println(m2);
 		 //Assert.assertEquals(response2.statusCode(), 200);
@@ -121,5 +120,5 @@ public class Add_Wallet {
 	}
 	
 
-}
+}s
 
