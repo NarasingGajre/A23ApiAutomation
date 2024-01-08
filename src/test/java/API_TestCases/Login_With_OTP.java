@@ -57,9 +57,8 @@ public class Login_With_OTP {
 		.when().post("/login_by_scrname_otp");
 	
 		       
-		
 		 dataToken = response1.path("token");
-		 System.out.println("data token.. "+dataToken);
+	 System.out.println("data token.. "+dataToken);
 		 System.setProperty(dataToken, dataToken);
 
 }

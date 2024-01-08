@@ -5,7 +5,7 @@
     <classes>
       <class name="API_TestCases.Add_Wallet">
         <methods>
-          <include name="addwallet"/>
+          <include name="paytmwallet"/>
         </methods>
       </class> <!-- API_TestCases.Add_Wallet -->
     </classes>
